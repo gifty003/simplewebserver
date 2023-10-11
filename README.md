@@ -21,9 +21,27 @@ Serving the HTML pages.
 Testing the webserver.
 
 ## PROGRAM:
-
-
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Top 5 Software Companies</title>
+</head>
+<body>
+    <h1>Top 5 Software Companies by Revenue</h1>
+    <ol>
+        <li>Microsoft</li>
+        <li>Apple</li>
+        <li>Amazon</li>
+        <li>Alphabet (Google)</li>
+        <li>Facebook</li>
+    </ol>
+</body>
+</html>
+```
 ## OUTPUT:
+![image](https://github.com/gifty003/simplewebserver/assets/145822352/89c1e7a2-7fcf-4ab6-a963-8f5c6c57443e)
 
 
 ## RESULT:
