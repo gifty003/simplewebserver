@@ -1,5 +1,5 @@
 # EX01 Developing a Simple Webserver
-## Date:
+## Date:07:09:2023
 
 ## AIM:
 To develop a simple webserver to serve html pages.
@@ -22,26 +22,39 @@ Testing the webserver.
 
 ## PROGRAM:
 ```
+from http.server import HTTPServer, BaseHTTPRequestHandler
+content = """
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Top 5 Software Companies</title>
+<title>My webserver</title>
 </head>
 <body>
-    <h1>Top 5 Software Companies by Revenue</h1>
-    <ol>
-        <li>Microsoft</li>
-        <li>Apple</li>
-        <li>Amazon</li>
-        <li>Alphabet (Google)</li>
-        <li>Facebook</li>
-    </ol>
+<h1><u>Top 5 Revenue Generating Companies</u><h1>
+<ul>
+<li>Apple</li>
+<li>Amazon</li>
+<li>Microsoft</li>
+<li>Samsung</li>
+<li>Google</li>
 </body>
 </html>
+"""
+class myhandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        print("request received")
+        self.send_response(200)
+        self.send_header('content-type', 'text/html; charset=utf-8')
+        self.end_headers()
+        self.wfile.write(content.encode())
+server_address = ('',8000)
+httpd = HTTPServer(server_address,myhandler)
+print("my webserver is running...")
+httpd.serve_forever()
 ```
 ## OUTPUT:
-![image](https://github.com/gifty003/simplewebserver/assets/145822352/89c1e7a2-7fcf-4ab6-a963-8f5c6c57443e)
+
+![Screenshot (2)](https://github.com/gifty003/simplewebserver/assets/145822352/bce4ac18-9028-42bb-bb95-ae4677161f96)
 
 
 ## RESULT:
